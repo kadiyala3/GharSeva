@@ -1,0 +1,154 @@
+.pageWrapper {
+  padding: 4rem 1rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.stepperContainer {
+  margin-bottom: 3rem;
+}
+
+.progressBar {
+  height: 8px;
+  background-color: #e5e7eb;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.progressFill {
+  height: 100%;
+  background-color: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+.stepLabels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+
+.activeLabel {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.stepContainer {
+  background-color: white;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.stepContainer h2 {
+  margin-bottom: 2rem;
+  color: var(--text-color);
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.card {
+  padding: 1.5rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+}
+
+.card:hover {
+  border-color: #d1d5db;
+  transform: translateY(-2px);
+}
+
+.card.selected {
+  border-color: var(--primary-color);
+  background-color: #f8faff;
+}
+
+.card h3, .card h4 {
+  margin-bottom: 0.5rem;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--secondary-color);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.input {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+.btnGroup {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.nextBtn, .confirmBtn {
+  padding: 0.8rem 2rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.nextBtn:disabled, .confirmBtn:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+}
+
+.backBtn {
+  padding: 0.8rem 2rem;
+  background-color: white;
+  color: var(--text-color);
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.summaryCard {
+  background-color: #f9fafb;
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.summaryRow span {
+  color: var(--text-light);
+}
