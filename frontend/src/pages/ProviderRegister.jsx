@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import axios from 'axios';
+import api from '../services/api';
 import toast from 'react-hot-toast';
 import styles from './Auth.module.css';
 
@@ -26,7 +26,7 @@ const ProviderRegister = () => {
     }
     
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/register', {
+      const response = await api.post('/auth/register', {
         name: formData.name,
         email: formData.email,
         phone: formData.phone,
