@@ -1,20 +1,28 @@
 import time
+import tempfile
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 # =====================================================================
 # GharSeva Full End-to-End Selenium Automation Suite
-# Target URL: http://localhost:5173 (or https://gharseva-mu.vercel.app/)
+# Target URL: https://gharseva-mu.vercel.app (or http://localhost:5173)
 # =====================================================================
 
-BASE_URL = "http://localhost:5173"  # Change to "https://gharseva-mu.vercel.app" to test live
+BASE_URL = "https://gharseva-mu.vercel.app"
 
 print(f"Starting GharSeva Automation on: {BASE_URL}")
 
-# 1. Initialize Chrome and maximize window
-driver = webdriver.Chrome()
+# 1. Configure Chrome options to allow Vercel HTTPS to communicate with local API
+chrome_options = Options()
+chrome_options.add_argument("--disable-web-security")
+chrome_options.add_argument("--allow-running-insecure-content")
+temp_profile = tempfile.mkdtemp()
+chrome_options.add_argument(f"--user-data-dir={temp_profile}")
+
+driver = webdriver.Chrome(options=chrome_options)
 driver.maximize_window()
 wait = WebDriverWait(driver, 10)
 
@@ -82,7 +90,7 @@ try:
     password_input = driver.find_element(By.XPATH, "//input[@type='password']")
     password_input.clear()
     password_input.send_keys("password123")
-    print("Entered credentials: rahul@example.com")
+    print("Entered credentials for: rahul@example.com")
     time.sleep(1)
 
     # 9. Click 'Sign In' button
