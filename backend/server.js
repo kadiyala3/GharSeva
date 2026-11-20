@@ -1,4 +1,6 @@
-require('dotenv').config();
+const path = require('path');
+require('dotenv').config({ path: path.join(__dirname, '.env') });
+require('dotenv').config(); // Fallback to cwd .env if any
 const http = require('http');
 const app = require('./src/app');
 const connectDB = require('./src/config/db');
